@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteBase /test-task/
+
+RewriteRule ^order$ index.php [L]
