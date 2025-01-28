@@ -7,7 +7,7 @@ class Order {
     public $products;
 
     const DISCOUNT_SENIOR = 0.05;
-    const DISCOUNT_EARLY_ORDER = 0.04;
+    const DISCOUNT_PREORDER = 0.04;
     const DISCOUNT_BULK = 0.03;
     const QUANTITY_FOR_BULK = 10;
 

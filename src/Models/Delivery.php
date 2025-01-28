@@ -3,7 +3,7 @@ namespace Models;
 
 class Delivery {
     private $deliveryDateTime;
-    const EARLY_DATE_INTERVAL = 7;
+    const PREORDER_INTERVAL = 7;
 
     public function __construct(string $deliveryDateTime) {
         $this->setDeliveryDateTime($deliveryDateTime);
@@ -18,12 +18,12 @@ class Delivery {
         $this->deliveryDateTime = $deliveryDateTime;
     }
 
-    public function isEarlyOrder(): bool
+    public function isPreorder(): bool
     {
         $orderDate = new \DateTime('now');
         $deliveryDate = new \DateTime($this->deliveryDateTime);
         $interval = $orderDate->diff($deliveryDate);
 
-        return $interval->days <= self::EARLY_DATE_INTERVAL;
+        return $interval->days >= self::PREORDER_INTERVAL;
     }
 }

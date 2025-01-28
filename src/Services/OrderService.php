@@ -32,8 +32,8 @@ class OrderService
             $discounts[] = Order::DISCOUNT_SENIOR;
         }
 
-        if ($order->getDelivery()->isEarlyOrder()) {
-            $discounts[] = Order::DISCOUNT_EARLY_ORDER;
+        if ($order->getDelivery()->isPreorder()) {
+            $discounts[] = Order::DISCOUNT_PREORDER;
         }
 
         if ($order->isBulkOrder()) {
